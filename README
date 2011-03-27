@@ -1,6 +1,8 @@
 wconfig is a little tool written in Python that allows you scan for local wireless networks, automaticaly connect to first 
 working network.
 
+Licensed under GNU/GPLv3 license.
+
 Requirements: Linux(or other Unix-like OS compatibile with WICD), python, wicd
 
 webnull@webnull-gentoo-desktop ~/Praca/python/wconfig $ ./wconfig.py --help
