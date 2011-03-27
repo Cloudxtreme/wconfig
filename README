@@ -1,0 +1,65 @@
+wconfig is a little tool written in Python that allows you scan for local wireless networks, automaticaly connect to first 
+working network.
+
+webnull@webnull-gentoo-desktop ~/Praca/python/wconfig $ ./wconfig.py --help
+wconfig for GNU/Linux, a wireless scanner with option to connect automaticaly to wireless, provide also XML output
+Usage: wconfig [long GNU option] [option]
+
+ --xml, -x - output results as XML to be easy to parse
+ --auto-connect, -a - output results as XML to be easy to parse
+ --debug, -g - enable extra debugging
+ --disconnect, -d - disconnect from network if connected
+ --connect-by-mac, -m - connect to wireless network by mac adress
+ --connect-by-name, -e - connect to wireless network name (essid)
+ --help, -h this screen
+
+Examples:
+ wconfig -s # scan for wireless networks and show results as plaintext
+ wconfig -xs # scan for wireless networks and show results as parsable XML
+ wconfig -d # disconnect from wireless network
+ wconfig -ds # disconnect from wireless network and scan for network
+ wconfig -m 00:00:00:00:00:00 # connect to wireless network by MAC adress
+ wconfig -e my-network # connect to wireless network by bssid (network name)
+ wconfig -i 0 # connect to first network from list, to list networks type wconfig -s
+ wconfig -as # connect to first working network
+
+It also supports XML output, so you can easily parse wconfig's output.
+
+Example of XML output:
+webnull@webnull-gentoo-desktop ~/Praca/python/wconfig $ ./wconfig.py -xs
+<?xml version="1.0" encoding="UTF-8"?>
+<networks>
+   <network>
+        <mac>00:00:00:00:00:00</mac>
+        <name>webnull-home-network</name>
+        <encryption>WPA2</encryption>
+        <percentage_strength>75</percentage_strength>
+        <mode>Master</mode>
+        <channel>7</channel>
+        <active>True</active>
+   </network>
+   <network>
+        <mac>00:00:00:00:00:00</mac>
+        <name>Pentagram P 6331-42 Domek</name>
+        <encryption>WPA2</encryption>
+        <percentage_strength>32</percentage_strength>
+        <mode>Master</mode>
+        <channel>1</channel>
+        <active>False</active>
+   </network>
+   <network>
+        <mac>00:00:00:00:00:00</mac>
+        <name>linksys</name>
+        <encryption>WPA2</encryption>
+        <percentage_strength>26</percentage_strength>
+        <mode>Master</mode>
+        <channel>11</channel>
+        <active>False</active>
+   </network>
+</networks>
+
+Example of plaintext output:
+webnull@webnull-gentoo-desktop ~/Praca/python/wconfig $ ./wconfig.py -s
+0 01:02:03:04:05:06 "webnull-home-network" WPA2 75% Master 7 *ACTIVE*
+1 07:08:09:10:11:12 "Pentagram P 6331-42 Domek" WPA2 32% Master 1 
+2 13:14:15:16:17:18 "linksys" WPA2 26% Master 11
