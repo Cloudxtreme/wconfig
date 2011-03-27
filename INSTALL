@@ -1,0 +1,11 @@
+First you need to have Unix like operating system, i think you have one installed already.
+
+wconfig is a client to wicd daemon, so to use wconfig you need to use wicd :-)
+
+If you meet all requirements you can now install wconfig:
+wget https://github.com/webnull/wconfig/raw/master/wconfig.py -O ~/wconfig
+su root # or sudo su
+chmod +x wconfig
+mv wconfig /usr/bin/wconfig
+
+Its installed and its working...
