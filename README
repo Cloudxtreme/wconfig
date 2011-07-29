@@ -67,3 +67,7 @@ webnull@webnull-gentoo-desktop ~/Praca/python/wconfig $ ./wconfig.py -s
 0 01:02:03:04:05:06 "webnull-home-network" WPA2 75% Master 7 *ACTIVE*
 1 07:08:09:10:11:12 "Pentagram P 6331-42 Domek" WPA2 32% Master 1 
 2 13:14:15:16:17:18 "linksys" WPA2 26% Master 11
+
+Changelog:
+29.07.2011 (v.1.0):
+    + Added changelog and versioning informations
